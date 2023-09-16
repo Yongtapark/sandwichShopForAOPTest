@@ -15,8 +15,8 @@ import toy.sandwichShop.shop.entity.sandwich.Ingredient;
 @RequiredArgsConstructor
 public class CheckStockAspect {
 
-    @Around("@annotation(checkStock)")
-    public Object stockCheck(ProceedingJoinPoint joinPoint, CheckStock checkStock) throws Throwable {
+    @Around("@within(toy.sandwichShop.shop.annotation.CheckStock)")
+    public Object stockCheck(ProceedingJoinPoint joinPoint) throws Throwable {
         Object[] args = joinPoint.getArgs();
         Object result = null;
 
