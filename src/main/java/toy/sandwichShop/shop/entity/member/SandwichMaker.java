@@ -25,4 +25,13 @@ public class SandwichMaker {
        return orderedSandwiches;
    }
 
+   public Long totalPrice(){
+       Long totalPrice = 0L;
+       List<Sandwich> orderedSandwichesList = this.orderedSandwiches;
+       for (Sandwich sandwich : orderedSandwichesList) {
+           totalPrice =+ sandwich.getPrice();
+       }
+       return totalPrice;
+   }
+
 }

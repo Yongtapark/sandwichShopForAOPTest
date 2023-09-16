@@ -49,7 +49,7 @@ class SandwichShopApplicationTests {
 		sandwichService.addIngredientToSandwich(ham,sandwich);
 		sandwichService.addSauceToSandwich(catchup,sandwich);
 
-		log.info("sandwich={}",sandwich);
+		log.info("sandwich= {}, 가격= {}원",sandwich, sandwich.getPrice());
 	}
 
 }

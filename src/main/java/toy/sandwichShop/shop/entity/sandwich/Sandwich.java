@@ -25,6 +25,24 @@ public class Sandwich {
         ingredient.deductStock();
     }
 
+    public Long getPrice(){
+        Long totalPrice = 0L;
+
+        List<MainIngredient> mainIngredients = this.mainIngredientList;
+        for (MainIngredient mainIngredient : mainIngredients) {
+            Long price = mainIngredient.getPrice();
+            totalPrice += price;
+        }
+        List<Sauce> sauces = this.sauceList;
+        for (Sauce sauce : sauces) {
+            Long price = sauce.getPrice();
+            totalPrice += price;
+        }
+        totalPrice = totalPrice + bread.getPrice();
+
+        return totalPrice;
+    }
+
     @Override
     public String toString() {
         StringBuilder name = new StringBuilder();
