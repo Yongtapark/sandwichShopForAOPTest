@@ -22,11 +22,13 @@ public class SandwichService {
     }
 
     public Sandwich addIngredientToSandwich(MainIngredient mainIngredient, Sandwich sandwich) {
-        sandwich.addIngredient(mainIngredient);
+        sandwich.deductStock(mainIngredient);
+        sandwich.addMainIngredient(mainIngredient);
         return sandwich;
     }
 
     public Sandwich addSauceToSandwich(Sauce sauce, Sandwich sandwich) {
+        sandwich.deductStock(sauce);
         sandwich.addSauce(sauce);
         return sandwich;
     }

@@ -11,16 +11,18 @@ public class Sandwich {
         this.bread = (Bread) bread;
     }
 
-    public Sandwich addIngredient(MainIngredient mainIngredient) {
-        mainIngredient.deductStock();
+    public Sandwich addMainIngredient(MainIngredient mainIngredient) {
         this.mainIngredientList.add(mainIngredient);
         return this;
     }
 
     public Sandwich addSauce(Sauce sauce) {
-        sauce.deductStock();
         this.sauceList.add(sauce);
         return this;
+    }
+
+    public void deductStock(Ingredient ingredient){
+        ingredient.deductStock();
     }
 
     @Override

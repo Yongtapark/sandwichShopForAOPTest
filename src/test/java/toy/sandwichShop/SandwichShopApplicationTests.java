@@ -26,7 +26,7 @@ class SandwichShopApplicationTests {
 
 		Sandwich sandwich = new Sandwich(bread);
 		sandwich.addSauce(catchup);
-		sandwich.addIngredient(ham);
+		sandwich.addMainIngredient(ham);
 
 		log.info("sandwich={}",sandwich);
 
