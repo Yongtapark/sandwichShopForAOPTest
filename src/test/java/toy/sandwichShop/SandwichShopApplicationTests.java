@@ -46,8 +46,8 @@ class SandwichShopApplicationTests {
 		sandwichService.addStock(ham,2L);
 
 		Sandwich sandwich = sandwichService.createSandwich(bread);
-		sandwichService.addIngredientToSandwich(sandwich,ham);
-		sandwichService.addSauceToSandwich(sandwich,catchup);
+		sandwichService.addIngredientToSandwich(ham,sandwich);
+		sandwichService.addSauceToSandwich(catchup,sandwich);
 
 		log.info("sandwich={}",sandwich);
 	}

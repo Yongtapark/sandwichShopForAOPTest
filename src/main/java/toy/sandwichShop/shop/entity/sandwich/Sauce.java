@@ -1,13 +1,13 @@
 package toy.sandwichShop.shop.entity.sandwich;
 
 import lombok.Getter;
-import toy.sandwichShop.shop.annotation.AddStock;
+import toy.sandwichShop.shop.annotation.CheckStock;
 
 @Getter
 public class Sauce implements Ingredient {
     private String name;
     private Long price;
-    private Long stock;
+    private Long stock = 0L;
 
     public Sauce(String name, Long price) {
         this.name = name;
@@ -15,7 +15,6 @@ public class Sauce implements Ingredient {
     }
 
     @Override
-    @AddStock
     public void addStock(Long quantity) {
         this.stock += quantity;
     }
