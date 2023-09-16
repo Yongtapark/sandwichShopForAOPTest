@@ -7,8 +7,8 @@ public class Sandwich {
     private List<MainIngredient> mainIngredientList = new ArrayList<>();
     private List<Sauce> sauceList = new ArrayList<>();
 
-    public Sandwich(Ingredient bread) {
-        this.bread = (Bread) bread;
+    public Sandwich(Bread bread) {
+        this.bread = bread;
     }
 
     public Sandwich addMainIngredient(MainIngredient mainIngredient) {

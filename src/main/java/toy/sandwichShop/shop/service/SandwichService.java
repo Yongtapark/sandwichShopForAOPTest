@@ -16,9 +16,9 @@ public class SandwichService {
         ingredient.addStock(quantity);
     }
 
-    public Sandwich createSandwich(Ingredient ingredient) {
-        ingredient.deductStock();
-      return new Sandwich(ingredient);
+    public Sandwich createSandwich(Bread bread) {
+        bread.deductStock();
+      return new Sandwich(bread);
     }
 
     public Sandwich addIngredientToSandwich(MainIngredient mainIngredient, Sandwich sandwich) {
