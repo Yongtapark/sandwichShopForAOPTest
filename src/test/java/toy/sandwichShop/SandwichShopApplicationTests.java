@@ -24,14 +24,9 @@ class SandwichShopApplicationTests {
 		Sauce catchup = new Sauce("캐첩",200L);
 		MainIngredient ham = new MainIngredient("햄",3000L);
 
-		Sandwich sandwich = new Sandwich(bread);
-		sandwich.addSauce(catchup);
-		sandwich.addMainIngredient(ham);
-
-		log.info("sandwich={}",sandwich);
-
 		SandwichMaker sandwichMaker = new SandwichMaker();
-		sandwichMaker.makeSandwich(sandwich);
+		sandwichMaker.makeSandwich(bread,ham,catchup);
+
 		log.info("sandwichMaker.getOrderedSandwiches()={}",sandwichMaker.getOrderedSandwiches());
 	}
 
@@ -45,9 +40,8 @@ class SandwichShopApplicationTests {
 		sandwichService.addStock(catchup,2L);
 		sandwichService.addStock(ham,2L);
 
-		Sandwich sandwich = sandwichService.createSandwich(bread);
-		sandwichService.addIngredientToSandwich(ham,sandwich);
-		sandwichService.addSauceToSandwich(catchup,sandwich);
+		SandwichMaker sandwichMaker = new SandwichMaker();
+		Sandwich sandwich = sandwichMaker.makeSandwich(bread, ham, catchup);
 
 		log.info("sandwich= {}, 가격= {}원",sandwich, sandwich.getPrice());
 	}
